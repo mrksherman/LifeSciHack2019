@@ -1,0 +1,79 @@
+Symptom Tracker
+Background
+Introduction This tool is designed to address the issues related to polypharma prescription regimens in older adults, specifically tracking adherence, symptoms and possible side effects, and lifestyle factors.  The open source portion of this project is designed to allow user input of prescriptions, OTC medication, vitamins, minerals, and dietary supplements in addition to vitals (blood pressure, glucose monitoring, weight, etc.), workout schedule, disease symptoms, and scheduled doctors visits.  The functionality of the open source project enables reminders for caretakers to supply medications to the elderly and enables monitoring of adherence, symptom occurrence, and physical activity.  With this data, patients could bring a summarized report with them to a physician to assist in the development of an optimal medication schedule to suit their lifestyle.
+How it Works The software described here is a smartphone app and web-based application that provides physicians with a summary of user input of medication adherence, symptom occurrence, and physical activity over time. Each user creates an anonymized User Name linked only to their email and is stored locally, unless the user opts to securely store data on our server so that they can be accessed directly from other devices.  The output from the application is a PDF report that can be printed and brought with the user to a physician to inform the physician of daily habits and use as a tool to manage prescriptions or make lifestyle recommendations.
+
+GitHub Repo:
+https://github.com/daniel-bejarano/The-Teddybear-Factory-Project
+Product Roadmap
+
+
+Research: Identify Consumer Pains
+Successful consumer products address a pain point that consumers have or add value to something they are already doing. In order to better understand what will drive our target market to adopt and use our product on a daily basis, we should start by researching what potential clients desire. This initial research will help us better understand what attributes the final product should have in order to be adopted.
+Focus Groups
+Surveys: mTurk, Google Surveys
+Speak to physicians about what could be most helpful in a report
+
+
+Design: Identify input fields, formats, and report content
+	App Screen 1: Create a new user 
+		Fields: ID, PW, email, recovery question, recovery answer
+
+	App Screen 2: Login screen
+	
+	App Screen 3: Forgot user ID/PW
+	
+	App screen 4: Entry of meds (one at a time entry)
+		Fields: Med name, quantity, unit, frequency (drop down: before breakfast, with breakfast, after breakfast, mid morning, before lunch, with lunch, after lunch, mid afternoon, before dinner, with dinner, after dinner, before bedtime or shows time field with am/pm), start date, end date (if known), set reminder to take meds (toggle on/off)
+		Optional: Collect information to set reminders to refill prescriptions. Fields: Refill date, refills remaining, number of pills/units in current refill, pharmacy contact information, set reminder to reorder meds.
+		Optional 2: Automatically send refill information to the pharmacy or connect to someone like PillPack to fill prescriptions. Fields needed would be  insurance information and Patient information (now we need to ensure a good algorithm that keeps the person’s identity safe). For this option it would be great if it could receive information that the order was filled and picked up. There might be a need for a screen where the patient can confirm the medication was picked up and how many pills/units were received. This should pop up when the system knows there are insufficient pills to dispense or when there are 2-3 remaining pills until the patient indicates the prescription has either been terminated or refilled.
+	
+	App screen 5; Med list (shows all meds)
+		Columns: Med name, quantity, unit, frequency, start date, end date.
+	
+	App screen 6: Medication Reminder
+		This screen basically appears on a locked or active screen as a pop up to remind the individual that it is time to take the medication. Multiple medications might appear on the screen with checkboxes next to each. The user marks each as taken when they are taken.
+	
+	App Screen 7: Med list with symptoms checked off 
+		Across the top will be the name of the medication. Across the bottom will be the known list of potential side effects. Check marks or Xs will appear to indicate that a side effect is known for that medication. The last column will tally the total marks on each row.
+		This screen also allows the user to close the list of medications and just see the total column next to the column of side effects.
+		This screen is printable.
+	
+	App Screen 8: Symptom Tracker
+		Allows users to enter symptoms as they experience them or periodically as they desire.
+		Fields: Symptom list (drop down + other), start date, start time, end date, end time, comments.
+	
+	App Screen 9: Visual symptom across time display
+		Shows a chart of days (typically the past 30 days or start of the current month with 30-31 days showing along the x-axis). On the y-axis are the symptoms the user has entered.  Lines across days connect or show the duration of each symptom experienced. For symptoms matching any side effects, the lines are displayed in color 1. Non matching side effects are shown in color 2. This screen is printable.
+	
+	App Screen 10-11: Health History/conditions/Diagnosis (this might be multiple screens)
+		The purpose of this screen is for patients or their physicians to enter the information. When patients are entering it, the software will use it to correlate the information with the medications being taken. When the physician enters it, the software can be used to suggest the best medications to give the patient - note this functionality is only provided to the physician because they are the ones who can use the information to prescribe. The software only provides information based on the databases it brings together, but prescribing is the function of the physician.
+		Fields: Iterated list of medical conditions, date of diagnosis, and severity or categorization if applicable (ex. breast cancer, 10/4/2010, Stage 2).
+		Fields screen B: Height, DOB, weight, BMI (calculated), Ethnicity. Weight might be tracked across time.
+	
+	Develop animation to generate interest and enlist more users
+
+
+Build: Build user interface, start generating mock/user data, auto-generate reports
+	The project is developed in the Django framework (Python, Javascript, HTML). 
+	Reports are generated within the project’s github. 
+
+
+Test: Return to focus groups and survey participants to gather feedback on prototype
+	Meet back up with physicians to see how to better improve report format and details
+ 
+ 
+Budget and Timeline
+ 
+Budget ($500):
+-       $150: Targeted surveys
+-       $200: Development of animation
+-       $100: Purchase of database access
+-       $50: Travel for research
+ 
+Timeline:
+-       1 week -1 month: Hold focus groups, refine survey questions, identify interview candidates
+-       1 month - 2 months: Finalize/send out surveys and perform verbal interviews
+-       1 month - 5 months: Develop prototype for demonstrations for focus groups and survey participants
+-       4 months- 8 months: Set up live demonstrations for potential user interface and reports for physicians
+
